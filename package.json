@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "format": "biome format --write .",
+    "lint": "biome lint --apply .",
+    "check": "biome check --apply ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.3"
+  },
+  "workspaces": ["apps/*"]
+}

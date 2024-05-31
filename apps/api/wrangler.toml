@@ -1,0 +1,8 @@
+name = "kast"
+main = "src/app.ts"
+compatibility_date = "2023-12-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kast"
+database_id = "aa48eb7a-41a0-49df-93b9-5ed354ce4239"
