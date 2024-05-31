@@ -1,9 +1,21 @@
-# Build outputs
-dist
-
 # Dependencies
 node_modules
 
 # Wrangler
 .wrangler
 .dev.vars
+
+# Build outputs
+dist
+build
+
+# Next.js
+.next
+out
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo

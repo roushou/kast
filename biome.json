@@ -20,6 +20,6 @@
     }
   },
   "files": {
-    "ignore": [".wrangler", "migrations"]
+    "ignore": [".wrangler", "migrations", ".next"]
   }
 }
