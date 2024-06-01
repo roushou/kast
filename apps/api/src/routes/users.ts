@@ -8,14 +8,11 @@ import { asyncFaillable } from "../utils";
 
 const router = new Hono();
 
-router.get("/users/:id", async (ctx) => {
-  const id = Number.parseInt(ctx.req.param("id"));
-  if (Number.isNaN(id)) {
-    throw new HTTPException(400);
-  }
+router.get("/users/:address", async (ctx) => {
+  const address = ctx.req.param("address");
 
   const tx = await asyncFaillable(
-    ctx.var.db.query.users.findFirst({ where: eq(users.id, id) }),
+    ctx.var.db.query.users.findFirst({ where: eq(users.address, address) }),
   );
 
   if (!tx.success) {
@@ -34,6 +31,8 @@ router.post(
   zValidator(
     "json",
     z.object({
+      // TODO: Should check if valid address
+      address: z.string().min(1),
       username: z.string().min(1),
       description: z.string().min(1),
     }),
@@ -43,6 +42,7 @@ router.post(
 
     const tx = await asyncFaillable(
       ctx.var.db.insert(users).values({
+        address: payload.address,
         username: payload.username,
         description: payload.description,
       }),
