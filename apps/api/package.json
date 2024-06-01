@@ -2,6 +2,7 @@
   "name": "@kast/api",
   "version": "0.1.0",
   "private": true,
+  "types": "./src/types.ts",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
