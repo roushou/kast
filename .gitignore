@@ -5,17 +5,13 @@ node_modules
 .wrangler
 .dev.vars
 
-# Build outputs
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
 dist
-build
-
-# Next.js
-.next
-out
-next-env.d.ts
-
-# Vercel
-.vercel
 
 # TypeScript
 *.tsbuildinfo
