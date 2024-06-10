@@ -29,6 +29,16 @@ router.get("/videos/:id", async (ctx) => {
   return ctx.json(tx.data);
 });
 
+router.get("/videos", async (ctx) => {
+  const tx = await asyncFaillable(ctx.var.db.query.videos.findMany());
+
+  if (!tx.success) {
+    throw new HTTPException(500, { message: "failed to retrieve videos" });
+  }
+
+  return ctx.json(tx.data);
+});
+
 router.post(
   "/videos",
   zValidator(
