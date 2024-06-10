@@ -1,3 +1,3 @@
-import type { CreateUser, User } from "./database/schemas";
+import type { CreateUser, CreateVideo, User, Video } from "./database/schemas";
 
-export type { CreateUser, User };
+export type { CreateUser, CreateVideo, User, Video };
