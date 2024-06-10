@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { z } from "zod";
-import { videos } from "../database/schemas";
+import { videoCategories, videos } from "../database/schemas";
 import { asyncFaillable } from "../utils";
 
 const router = new Hono();
@@ -46,6 +46,7 @@ router.post(
     z.object({
       title: z.string().min(1),
       description: z.string().min(1),
+      categories: z.array(z.enum(videoCategories)),
     }),
   ),
   async (ctx) => {
@@ -55,6 +56,7 @@ router.post(
       ctx.var.db.insert(videos).values({
         title: payload.title,
         description: payload.description,
+        categories: payload.categories,
         // TODO
         bucketUrl: "",
       }),

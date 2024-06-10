@@ -13,10 +13,27 @@ export type User = typeof users.$inferSelect;
 
 export type CreateUser = typeof users.$inferInsert;
 
+export const videoCategories = [
+  "music",
+  "travel",
+  "gym",
+  "boxing",
+  "programming",
+  "gaming",
+  "ai",
+] as const;
+
+type VideoCategory = (typeof videoCategories)[number];
+
 export const videos = sqliteTable("videos", {
   id: integer("id").primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
+  views: integer("views").default(0).notNull(),
+  categories: text("categories", { mode: "json" })
+    .notNull()
+    .$type<VideoCategory[]>()
+    .default(sql`(json_array())`),
   bucketUrl: text("bucket_url").notNull(),
   createdAt: text("created_at").notNull().default(sql`(current_timestamp)`),
 });
