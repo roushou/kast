@@ -6,5 +6,5 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@wagmi/vue/nuxt", "@nuxtjs/tailwindcss"],
 });
