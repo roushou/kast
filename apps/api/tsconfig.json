@@ -9,6 +9,6 @@
     "types": ["@cloudflare/workers-types"],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "verbatimModuleSyntax": "error"
+    "verbatimModuleSyntax": true
   }
 }
