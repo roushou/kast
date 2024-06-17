@@ -14,7 +14,6 @@ import { shortenAddress } from "~/lib/utils";
 const accountQuery = useAccount();
 const balanceQuery = useBalance();
 const connectQuery = useConnect();
-console.log(balanceQuery.data.value);
 
 function connectWallet() {
   const coinbaseWalletConnector = connectQuery.connectors.find(
