@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import type { Video } from "@kast/api";
 
+useSeoMeta({
+  title: "Kast | Brands at your fingertips",
+  ogTitle: "Kast | Brands at your fingertips",
+  description:
+    "Create your brand online in a few clicks and sell your products live.",
+  ogDescription:
+    "Create your brand online in a few clicks and sell your products live.",
+  twitterCard: "summary_large_image",
+});
+
 const config = useRuntimeConfig();
 
 const videosQuery = await useFetch<Video[]>(

@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { User } from "@kast/api";
 
+useSeoMeta({
+  title: "Kast | Profile",
+  ogTitle: "Kast | Profile",
+  twitterCard: "summary_large_image",
+});
+
 const route = useRoute();
 const config = useRuntimeConfig();
 
