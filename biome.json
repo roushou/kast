@@ -20,6 +20,6 @@
     }
   },
   "files": {
-    "ignore": [".wrangler", "migrations", ".nuxt"]
+    "ignore": [".wrangler", "migrations", ".nuxt", ".output"]
   }
 }
