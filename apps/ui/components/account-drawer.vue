@@ -27,7 +27,7 @@ function connectWallet() {
 </script>
 
 <template>
-  <DialogRoot>
+  <DialogRoot v-if="accountQuery.isConnected.value">
     <DialogTrigger class="flex items-center space-x-2">
       <img
         :src="'https://avatar.vercel.sh/' + accountQuery.address.value"
