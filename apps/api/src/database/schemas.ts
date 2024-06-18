@@ -2,7 +2,7 @@ import { sql } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
-  id: integer("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   address: text("address").notNull(),
   username: text("username").notNull(),
   description: text("description").notNull(),
@@ -26,7 +26,7 @@ export const videoCategories = [
 type VideoCategory = (typeof videoCategories)[number];
 
 export const videos = sqliteTable("videos", {
-  id: integer("id").primaryKey(),
+  id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   description: text("description").notNull(),
   views: integer("views").default(0).notNull(),
