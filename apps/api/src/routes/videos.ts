@@ -44,6 +44,8 @@ router.post(
   zValidator(
     "json",
     z.object({
+      // TODO: User id should be extracted from signature
+      userId: z.number().min(0),
       title: z.string().min(1),
       description: z.string().min(1),
       categories: z.array(z.enum(videoCategories)),
@@ -54,6 +56,7 @@ router.post(
 
     const tx = await asyncFaillable(
       ctx.var.db.insert(videos).values({
+        userId: payload.userId,
         title: payload.title,
         description: payload.description,
         categories: payload.categories,

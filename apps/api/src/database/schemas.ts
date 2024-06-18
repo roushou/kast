@@ -27,6 +27,9 @@ type VideoCategory = (typeof videoCategories)[number];
 
 export const videos = sqliteTable("videos", {
   id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: integer("user_id")
+    .references(() => users.id)
+    .notNull(),
   title: text("title").notNull(),
   description: text("description").notNull(),
   views: integer("views").default(0).notNull(),

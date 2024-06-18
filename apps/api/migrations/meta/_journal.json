@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1717170356428,
-      "tag": "0000_majestic_forgotten_one",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1717229603035,
-      "tag": "0001_uneven_whirlwind",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1717919076906,
-      "tag": "0002_cold_tenebrous",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1718022518177,
-      "tag": "0003_stormy_alex_power",
+      "when": 1718695078337,
+      "tag": "0000_many_rick_jones",
       "breakpoints": true
     }
   ]

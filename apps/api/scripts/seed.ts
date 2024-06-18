@@ -22,53 +22,58 @@ for (let i = 0; i < users.length; i++) {
   });
 }
 
-const videos: Pick<
-  CreateVideo,
-  "title" | "description" | "views" | "categories"
->[] = [
+const videos: Omit<CreateVideo, "bucketUrl">[] = [
   {
+    userId: 1,
     title: "Learn Rust",
     description: "Become great at writing Rust",
     views: 1100,
     categories: ["programming"],
   },
   {
+    userId: 1,
     title: "Learn TypeScript",
     description: "Become great at writing TypeScript",
     views: 500,
     categories: ["programming"],
   },
   {
+    userId: 1,
     title: "Walk around the mountains",
     description: "Discover the beauties of Alpes",
     views: 1200,
     categories: ["travel"],
   },
   {
+    userId: 1,
     title: "Discover Thailand",
     description: "Let's do a road trip to Bangkok and Chiang Mai",
     views: 700,
     categories: ["travel"],
   },
   {
+    userId: 1,
     title: "Full Body Workout",
     description: "Train your whole body",
     views: 122,
     categories: ["gym"],
   },
   {
+    userId: 1,
     title: "Leg Day",
     description: "Let's do some squat, press and running",
     views: 150,
     categories: ["gym"],
   },
   {
+    userId: 1,
     title: "3AM Lofi Mix",
     description: "Playlist of relaxing Lofi musics",
     views: 12000,
     categories: ["music"],
   },
   {
+    userId: 1,
     title: "LoL Gameplay",
     description: "Learn to play league of legends",
     views: 5000,
